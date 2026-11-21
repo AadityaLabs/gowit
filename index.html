@@ -3,404 +3,1027 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Godwit International | Premium IELTS Coaching & Study Abroad Consultancy</title>
-    <meta name="description" content="Your Global Journey Starts Here. Expert IELTS & PTE preparation, university admissions, and personalised visa guidance for Canada, UK, Australia, USA & New Zealand.">
-    
-    <!-- Google Fonts: Playfair Display (Editorial Serif) & Plus Jakarta Sans (Clean Modern Sans) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome & Phosphor Icons for crisp architectural iconography -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    
-    <link rel="stylesheet" href="styles.css">
-
+    <title>Godwit International | IELTS Coaching, Study Abroad & Student Visa Experts</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="tailwind.config.js"></script>
-    
+    <!-- Google Fonts: Plus Jakarta Sans & Playfair Display (matching reference serif accents) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome for crisp UI & Visa/Course Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
-    
+        <script src="tailwind.config.js"></script>
+
+        <link rel="stylesheet" href="styles.css">
 </head>
-<body class="antialiased selection:bg-lime-accent selection:text-navy-950">
+<body class="bg-plum-950 text-slate-100 font-sans antialiased selection:bg-lavender-500 selection:text-white overflow-x-hidden">
 
-    <!-- ===================================================================== -->
-    <!-- 1. ANNOUNCEMENT BAR (Editable from Admin Dashboard)                   -->
-    <!-- ===================================================================== -->
-    <div id="announcement-bar" class="bg-navy-900 border-b border-white/10 text-cream-100 text-xs sm:text-sm py-2.5 px-4 transition-all">
-        <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
-            <div class="flex items-center gap-2.5 mx-auto sm:mx-0">
-                <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-semibold bg-lime-accent text-navy-950 uppercase tracking-wider">Admissions Open</span>
-                <p id="announcement-text" class="text-cream-100/90 font-medium">
-                    Upcoming IELTS Academic & General Training Batches — Book your complimentary 1-on-1 diagnostic & visa counselling session.
-                </p>
-            </div>
-            <div class="hidden md:flex items-center gap-4 text-xs text-cream-200/80">
-                <a href="https://www.instagram.com/godwitinternational?lqvp=MWJuc3M0Y3NubmlwMg==" target="_blank" rel="noopener noreferrer" class="hover:text-lime-accent transition flex items-center gap-1.5">
-                    <i class="fa-brands fa-instagram"></i> @godwitinternational
-                </a>
-                <span>•</span>
-                <button onclick="navigateTo('admin')" class="hover:text-lime-accent transition flex items-center gap-1">
-                    <i class="ph ph-lock-key"></i> Staff Portal
-                </button>
+    <!-- ==================== PRELOADER ==================== -->
+    <div id="preloader" class="fixed inset-0 z-[100] bg-plum-950 flex flex-col items-center justify-center">
+        <div class="relative flex items-center justify-center w-28 h-28 mb-5">
+            <div class="absolute inset-0 rounded-full border-4 border-lavender-500/20"></div>
+            <div class="absolute inset-0 rounded-full border-4 border-t-skybrand-400 border-r-lavender-500 border-b-transparent border-l-transparent animate-spin"></div>
+            <!-- Brand SVG Emblem inside Loader -->
+            <div class="w-16 h-16 rounded-full bg-white p-1.5 flex items-center justify-center shadow-lg">
+                <svg viewBox="0 0 100 100" class="w-full h-full">
+                    <circle cx="50" cy="50" r="34" fill="#0EA5E9"/>
+                    <path d="M32 28 C42 22, 58 26, 62 36 C54 42, 46 40, 42 48 C34 45, 28 36, 32 28 Z" fill="#22C55E"/>
+                    <path d="M55 52 C68 48, 76 58, 70 70 C60 76, 48 70, 50 60 Z" fill="#22C55E"/>
+                    <ellipse cx="50" cy="52" rx="44" ry="15" transform="rotate(-24 50 52)" fill="none" stroke="#38BDF8" stroke-width="5"/>
+                    <path d="M36 22 L54 46 L76 44 L56 54 L44 74 L46 52 Z" fill="#92400E"/>
+                </svg>
             </div>
         </div>
+        <h2 class="text-xl font-bold tracking-wider text-white">GODWIT INTERNATIONAL</h2>
+        <p class="text-xs text-lavender-400 tracking-widest uppercase mt-1 animate-pulse">Preparing Your Global Pathway...</p>
     </div>
 
-    <!-- ===================================================================== -->
-    <!-- 2. STICKY NAVIGATION HEADER                                           -->
-    <!-- ===================================================================== -->
-    <header class="sticky top-0 z-40 bg-navy-950/90 backdrop-blur-xl border-b border-white/10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-                
-                <!-- Brand Logo (Custom SVG Emblem + Editorial Wordmark) -->
-                <div class="flex items-center gap-3">
-                    <!-- Curved Sidebar Trigger Button -->
-                    <button onclick="toggleCurvedSidebar()" aria-label="Open Quick Navigation Sidebar" class="p-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-cream-100 hover:text-lime-accent transition flex items-center gap-2 group" title="Open Curved Navigation Dock">
-                        <i class="ph ph-sidebar-simple text-xl group-hover:scale-110 transition-transform"></i>
-                        <span class="hidden xl:inline text-xs font-medium tracking-wide text-cream-200/80">Quick Menu</span>
-                    </button>
-
-                    <a href="#home" onclick="navigateTo('home'); return false;" class="flex items-center gap-3 group">
-                        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-lime-accent to-[#a8d149] flex items-center justify-center text-navy-950 shadow-glow group-hover:scale-105 transition-transform">
-                            <!-- Stylised Godwit Bird Wing SVG -->
-                            <svg class="w-6 h-6" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M4 22C10 21 15 16 27 6C22 14 19 20 12 25L15 27C10 27 6 25 4 22Z" fill="#090D16"/>
-                                <path d="M9 15C13 13 18 10 24 6C19 11 15 14 9 15Z" fill="#090D16" fill-opacity="0.65"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <span class="block font-serif text-xl font-bold tracking-tight text-white leading-none">Godwit</span>
-                            <span class="block text-[11px] uppercase tracking-[0.22em] text-lime-accent font-medium mt-0.5">International</span>
-                        </div>
-                    </a>
+    <!-- ==================== FLOATING GLASS NAVBAR ==================== -->
+    <header id="navbar-wrapper" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 px-3 sm:px-6 pt-3">
+        <nav id="navbar" class="max-w-7xl mx-auto rounded-2xl transition-all duration-500 px-4 sm:px-6 py-3 flex items-center justify-between">
+            <!-- Brand Logo (Uses uploaded logo with inline SVG fallback) -->
+            <a href="#home" class="flex items-center gap-3 group shrink-0">
+                <div class="bg-white rounded-xl p-1.5 shadow-md group-hover:scale-105 transition-transform flex items-center justify-center w-11 h-11 overflow-hidden">
+                    <img src="Godwit Logo (1).png" alt="Godwit International Logo" class="w-full h-full object-contain"
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <!-- Custom Crisp SVG Replica of Godwit Logo -->
+                    <svg viewBox="0 0 120 120" class="w-9 h-9 hidden" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <radialGradient id="globeGrad" cx="35%" cy="35%" r="65%">
+                                <stop offset="0%" stop-color="#38BDF8"/>
+                                <stop offset="100%" stop-color="#0284C7"/>
+                            </radialGradient>
+                        </defs>
+                        <circle cx="60" cy="60" r="40" fill="url(#globeGrad)"/>
+                        <path d="M38 35 Q52 24 66 34 Q72 44 60 50 Q46 52 38 35 Z" fill="#22C55E"/>
+                        <path d="M64 62 Q80 56 86 72 Q76 86 60 80 Q56 70 64 62 Z" fill="#16A34A"/>
+                        <path d="M34 64 Q44 62 48 76 Q40 86 32 76 Z" fill="#22C55E"/>
+                        <path d="M16 74 C10 52, 95 22, 106 46 C112 62, 65 86, 38 88" fill="none" stroke="#00B4D8" stroke-width="6" stroke-linecap="round"/>
+                        <!-- Soaring Godwit Bird -->
+                        <path d="M40 24 C50 38, 56 48, 62 54 L94 56 L66 62 L52 84 L52 60 C44 48, 38 34, 40 24 Z" fill="#78350F"/>
+                        <path d="M42 26 C52 38, 56 46, 60 52 L50 55 Z" fill="#D97706"/>
+                    </svg>
                 </div>
+                <div class="leading-tight">
+                    <span class="block font-extrabold text-sm sm:text-base tracking-wide text-white">GODWIT</span>
+                    <span class="block text-[10px] sm:text-xs font-semibold tracking-[0.2em] text-skybrand-400">INTERNATIONAL</span>
+                </div>
+            </a>
 
-                <!-- Desktop Navigation Links -->
-                <nav class="hidden lg:flex items-center gap-6 text-sm font-medium text-cream-100/85">
-                    <button onclick="navigateTo('home')" data-nav="home" class="nav-link hover:text-lime-accent transition py-2">Home</button>
-                    <button onclick="navigateTo('about')" data-nav="about" class="nav-link hover:text-lime-accent transition py-2">About Us</button>
-                    <button onclick="navigateTo('ielts')" data-nav="ielts" class="nav-link hover:text-lime-accent transition py-2">IELTS Coaching</button>
-                    
-                    <!-- Visa Services Dropdown -->
-                    <div class="relative group">
-                        <button onclick="navigateTo('visa')" data-nav="visa" class="nav-link hover:text-lime-accent transition py-2 flex items-center gap-1">
-                            Visa Services <i class="ph ph-caret-down text-xs"></i>
-                        </button>
-                        <div class="absolute left-0 top-full pt-2 w-60 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                            <div class="bg-navy-900 border border-white/15 rounded-2xl p-2 shadow-2xl">
-                                <button onclick="navigateTo('visa', 'student-visa')" class="w-full text-left px-3.5 py-2.5 rounded-xl hover:bg-white/10 text-xs text-cream-100 flex items-center justify-between">
-                                    <span>Student Visa Assistance</span> <i class="ph ph-arrow-up-right text-lime-accent"></i>
-                                </button>
-                                <button onclick="navigateTo('visa', 'visitor-visa')" class="w-full text-left px-3.5 py-2.5 rounded-xl hover:bg-white/10 text-xs text-cream-100 flex items-center justify-between">
-                                    <span>Tourist / Visitor Visa</span> <i class="ph ph-arrow-up-right text-lime-accent"></i>
-                                </button>
-                                <button onclick="navigateTo('visa', 'work-visa')" class="w-full text-left px-3.5 py-2.5 rounded-xl hover:bg-white/10 text-xs text-cream-100 flex items-center justify-between">
-                                    <span>Work Visa Guidance</span> <i class="ph ph-arrow-up-right text-lime-accent"></i>
-                                </button>
-                                <button onclick="navigateTo('visa', 'pr-consultancy')" class="w-full text-left px-3.5 py-2.5 rounded-xl hover:bg-white/10 text-xs text-cream-100 flex items-center justify-between">
-                                    <span>PR Consultancy</span> <i class="ph ph-arrow-up-right text-lime-accent"></i>
-                                </button>
-                            </div>
+            <!-- Clean, Uncongested Desktop Links (Exact items requested) -->
+            <div class="hidden xl:flex items-center gap-6 text-sm font-medium text-slate-200">
+                <a href="#home" class="hover:text-lavender-400 transition-colors">Home</a>
+                <a href="#about" class="hover:text-lavender-400 transition-colors">About Us</a>
+                <a href="#ielts" class="hover:text-lavender-400 transition-colors">IELTS Coaching</a>
+                <a href="#visa" class="hover:text-lavender-400 transition-colors">Visa Services</a>
+                <a href="#study-abroad" class="hover:text-lavender-400 transition-colors">Study Abroad</a>
+                <!-- Dropdown for Our Services & Blog so header stays airy & clean -->
+                <div class="relative group">
+                    <button class="flex items-center gap-1.5 hover:text-lavender-400 transition-colors py-2">
+                        <span>Our Services</span>
+                        <i class="fa-solid fa-chevron-down text-[10px] transition-transform group-hover:rotate-180"></i>
+                    </button>
+                    <div class="absolute left-0 top-full pt-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                        <div class="bg-plum-900/95 backdrop-blur-xl border border-white/10 rounded-2xl p-2 shadow-2xl">
+                            <a href="#services" class="block px-3.5 py-2.5 rounded-xl hover:bg-white/10 text-xs font-medium text-slate-200">End-to-End Services</a>
+                            <a href="#ielts" class="block px-3.5 py-2.5 rounded-xl hover:bg-white/10 text-xs font-medium text-slate-200">IELTS, PTE, GRE & SAT</a>
+                            <a href="#visa" class="block px-3.5 py-2.5 rounded-xl hover:bg-white/10 text-xs font-medium text-slate-200">Refusal Visa Re-Filing</a>
+                            <a href="#blog" class="block px-3.5 py-2.5 rounded-xl hover:bg-white/10 text-xs font-medium text-lavender-400">Insights & Blog</a>
                         </div>
                     </div>
-
-                    <!-- Study Abroad Dropdown -->
-                    <div class="relative group">
-                        <button onclick="navigateTo('study-abroad')" data-nav="study-abroad" class="nav-link hover:text-lime-accent transition py-2 flex items-center gap-1">
-                            Study Abroad <i class="ph ph-caret-down text-xs"></i>
-                        </button>
-                        <div class="absolute left-0 top-full pt-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                            <div class="bg-navy-900 border border-white/15 rounded-2xl p-2 shadow-2xl">
-                                <button onclick="navigateTo('study-abroad')" class="w-full text-left px-3.5 py-2 rounded-xl hover:bg-white/10 text-xs font-semibold text-lime-accent border-b border-white/10 mb-1">
-                                    All Study Destinations
-                                </button>
-                                <button onclick="navigateTo('country', 'canada')" class="w-full text-left px-3.5 py-2 rounded-xl hover:bg-white/10 text-xs text-cream-100">🇨🇦 Study in Canada</button>
-                                <button onclick="navigateTo('country', 'uk')" class="w-full text-left px-3.5 py-2 rounded-xl hover:bg-white/10 text-xs text-cream-100">🇬🇧 Study in United Kingdom</button>
-                                <button onclick="navigateTo('country', 'australia')" class="w-full text-left px-3.5 py-2 rounded-xl hover:bg-white/10 text-xs text-cream-100">🇦🇺 Study in Australia</button>
-                                <button onclick="navigateTo('country', 'usa')" class="w-full text-left px-3.5 py-2 rounded-xl hover:bg-white/10 text-xs text-cream-100">🇺🇸 Study in United States</button>
-                                <button onclick="navigateTo('country', 'nz')" class="w-full text-left px-3.5 py-2 rounded-xl hover:bg-white/10 text-xs text-cream-100">🇳🇿 Study in New Zealand</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <button onclick="navigateTo('services')" data-nav="services" class="nav-link hover:text-lime-accent transition py-2">Our Services</button>
-                    <button onclick="navigateTo('stories')" data-nav="stories" class="nav-link hover:text-lime-accent transition py-2">Success Stories</button>
-                    <button onclick="navigateTo('blog')" data-nav="blog" class="nav-link hover:text-lime-accent transition py-2">Blog</button>
-                    <button onclick="navigateTo('contact')" data-nav="contact" class="nav-link hover:text-lime-accent transition py-2">Contact</button>
-                </nav>
-
-                <!-- CTA & Mobile Toggle -->
-                <div class="flex items-center gap-3">
-                    <button onclick="navigateTo('consultation')" class="hidden sm:inline-flex items-center gap-2 bg-lime-accent hover:bg-lime-hover text-navy-950 font-semibold text-xs sm:text-sm px-5 py-2.5 rounded-full transition shadow-glow cursor-pointer">
-                        <span>Book a Free Consultation</span>
-                        <i class="ph-bold ph-arrow-right"></i>
-                    </button>
-                    
-                    <button onclick="toggleCurvedSidebar()" class="lg:hidden p-2.5 rounded-xl bg-lime-accent text-navy-950 font-bold" aria-label="Open Navigation Menu">
-                        <i class="ph-bold ph-list text-xl"></i>
-                    </button>
                 </div>
+                <a href="#blog" class="hover:text-lavender-400 transition-colors">Blog</a>
+                <a href="#contact" class="hover:text-lavender-400 transition-colors">Contact</a>
+            </div>
+
+            <!-- Right Action Buttons -->
+            <div class="hidden sm:flex items-center gap-3">
+                <a href="https://www.instagram.com/godwitinternational?lqvp=MWJuc3M0Y3NubmlwMg==" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
+                   class="w-9 h-9 rounded-full border border-white/15 flex items-center justify-center text-slate-200 hover:text-white hover:border-pink-500 hover:bg-gradient-to-tr hover:from-amber-500 hover:via-pink-500 hover:to-purple-600 transition-all">
+                    <i class="fa-brands fa-instagram text-base"></i>
+                </a>
+                <a href="#contact" class="btn-glow px-5 py-2.5 rounded-full bg-gradient-to-r from-lavender-500 to-indigo-600 text-white text-xs sm:text-sm font-semibold shadow-lg">
+                    Book a Free Consultation
+                </a>
+            </div>
+
+            <!-- Mobile Hamburger Button -->
+            <button id="mobile-menu-btn" aria-label="Open Navigation Menu" class="xl:hidden p-2.5 rounded-xl bg-white/5 border border-white/10 text-white hover:bg-white/10">
+                <i class="fa-solid fa-bars text-lg"></i>
+            </button>
+        </nav>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobile-menu" class="hidden xl:hidden max-w-7xl mx-auto mt-2 rounded-2xl bg-plum-900/95 backdrop-blur-xl border border-white/15 p-5 shadow-2xl">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm font-medium">
+                <a href="#home" class="mobile-link px-4 py-2.5 rounded-xl hover:bg-white/10">Home</a>
+                <a href="#about" class="mobile-link px-4 py-2.5 rounded-xl hover:bg-white/10">About Us</a>
+                <a href="#ielts" class="mobile-link px-4 py-2.5 rounded-xl hover:bg-white/10">IELTS Coaching</a>
+                <a href="#visa" class="mobile-link px-4 py-2.5 rounded-xl hover:bg-white/10">Visa Services</a>
+                <a href="#study-abroad" class="mobile-link px-4 py-2.5 rounded-xl hover:bg-white/10">Study Abroad</a>
+                <a href="#services" class="mobile-link px-4 py-2.5 rounded-xl hover:bg-white/10">Our Services</a>
+                <a href="#blog" class="mobile-link px-4 py-2.5 rounded-xl hover:bg-white/10">Blog</a>
+                <a href="#contact" class="mobile-link px-4 py-2.5 rounded-xl hover:bg-white/10">Contact</a>
+            </div>
+            <div class="mt-4 pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-3">
+                <a href="https://www.instagram.com/godwitinternational?lqvp=MWJuc3M0Y3NubmlwMg==" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs text-pink-400 font-semibold">
+                    <i class="fa-brands fa-instagram text-base"></i> @godwitinternational
+                </a>
+                <a href="#contact" class="mobile-link btn-glow px-5 py-2.5 rounded-full bg-lavender-500 text-white text-xs font-semibold">
+                    Book a Free Consultation
+                </a>
             </div>
         </div>
     </header>
 
-    <!-- ===================================================================== -->
-    <!-- CURVED GLASSMORPHIC SIDEBAR DRAWER (Inspired by Reference Image 1)    -->
-    <!-- ===================================================================== -->
-    <div id="curved-sidebar-backdrop" onclick="toggleCurvedSidebar()" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 hidden opacity-0 transition-opacity duration-300"></div>
-    <aside id="curved-sidebar" class="fixed top-4 left-4 bottom-4 w-[332px] max-w-[90vw] z-50 -translate-x-[120%] transition-transform duration-500 ease-out flex items-center">
-        <div class="curved-sidebar-drawer w-full h-full max-h-[740px] px-7 py-7 flex flex-col justify-between overflow-y-auto text-cream-100">
-            <div>
-                <!-- Sidebar Top Brand Header -->
-                <div class="flex items-center justify-between pb-5 border-b border-white/10">
-                    <div class="flex items-center gap-2.5">
-                        <div class="w-8 h-8 rounded-lg bg-lime-accent text-navy-950 flex items-center justify-center font-bold">G</div>
-                        <div>
-                            <div class="text-xs font-bold tracking-widest uppercase text-white">GODWIT</div>
-                            <div class="text-[10px] text-lime-accent tracking-wider">GLOBAL PORTAL</div>
-                        </div>
+    <!-- ==================== HERO SECTION (Inspired by Reference Aesthetic) ==================== -->
+    <section id="home" class="hero-mesh relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
+        <!-- Decorative Floating Orbs & Plus Accents -->
+        <div class="absolute top-32 -left-16 w-48 h-48 rounded-full bg-skybrand-500/20 blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-10 right-10 w-72 h-72 rounded-full bg-lavender-500/20 blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Left Column: Typography & Quick Search/Consultation Bar -->
+                <div class="lg:col-span-7 reveal">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/15 text-xs font-semibold text-skybrand-400 mb-6">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                        <span>Vadodara's Premier 5.0★ Rated Study Abroad & IELTS Hub</span>
                     </div>
-                    <button onclick="toggleCurvedSidebar()" class="w-8 h-8 rounded-lg bg-white/10 hover:bg-white/20 flex items-center justify-center text-cream-100 transition" aria-label="Close Sidebar">
-                        <i class="ph ph-arrow-line-left"></i>
-                    </button>
-                </div>
 
-                <!-- Student Quick Profile Card (matching Lumen card style) -->
-                <div class="mt-4 p-3.5 rounded-2xl bg-white/5 border border-white/10 flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-lime-accent to-emerald-400 flex items-center justify-center text-navy-950 font-bold text-sm">
-                        <i class="ph-fill ph-student text-lg"></i>
-                    </div>
-                    <div class="min-w-0 flex-1">
-                        <div class="flex items-center gap-1.5">
-                            <span class="text-sm font-semibold text-white truncate">Aspirant Hub</span>
-                            <span class="px-1.5 py-0.5 text-[9px] font-bold bg-lime-accent text-navy-950 rounded">2026</span>
-                        </div>
-                        <p class="text-[11px] text-cream-200/70 truncate">IELTS • Admissions • Visas</p>
-                    </div>
-                </div>
+                    <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.15] text-white">
+                        <span class="text-lavender-400">Global futures</span> are waiting to enrich your journey
+                        <span class="inline-flex items-center gap-1.5 text-rose-400 text-2xl align-middle ml-2">+ + +</span>
+                    </h1>
 
-                <!-- Menu Navigation -->
-                <div class="mt-5">
-                    <p class="text-[10px] uppercase tracking-[0.2em] text-cream-200/50 font-semibold px-2 mb-2">Navigation</p>
-                    <ul class="space-y-1 text-sm">
-                        <li>
-                            <button onclick="sidebarNav('home')" class="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white/10 transition text-left">
-                                <i class="ph ph-house text-lime-accent text-lg"></i> <span>Home</span>
-                            </button>
-                        </li>
-                        <li>
-                            <button onclick="sidebarNav('about')" class="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white/10 transition text-left">
-                                <i class="ph ph-buildings text-lime-accent text-lg"></i> <span>About Godwit</span>
-                            </button>
-                        </li>
-                        <li>
-                            <button onclick="sidebarNav('ielts')" class="w-full flex items-center justify-between px-3 py-2.5 rounded-xl bg-white/10 border border-white/10 text-white font-medium text-left">
-                                <span class="flex items-center gap-3"><i class="ph ph-graduation-cap text-lime-accent text-lg"></i> IELTS & PTE Coaching</span>
-                                <i class="ph ph-caret-right text-xs text-lime-accent"></i>
-                            </button>
-                            <!-- Tree Sub-items matching reference image -->
-                            <div class="ml-5 pl-3 border-l border-white/15 mt-1 space-y-1 text-xs text-cream-200/80">
-                                <button onclick="sidebarNav('tools', 'calculator')" class="w-full text-left py-1.5 px-2.5 rounded-lg hover:bg-white/10 hover:text-lime-accent transition flex items-center gap-2">
-                                    <span class="w-1.5 h-1.5 rounded-full bg-lime-accent"></span> IELTS Band Calculator
-                                </button>
-                                <button onclick="sidebarNav('tools', 'finder')" class="w-full text-left py-1.5 px-2.5 rounded-lg hover:bg-white/10 hover:text-lime-accent transition flex items-center gap-2">
-                                    <span class="w-1.5 h-1.5 rounded-full bg-white/40"></span> University Finder
-                                </button>
-                            </div>
-                        </li>
-                        <li>
-                            <button onclick="sidebarNav('visa')" class="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white/10 transition text-left">
-                                <i class="ph ph-passport text-lime-accent text-lg"></i> <span>Visa & Immigration</span>
-                            </button>
-                        </li>
-                        <li>
-                            <button onclick="sidebarNav('study-abroad')" class="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white/10 transition text-left">
-                                <i class="ph ph-globe-hemisphere-west text-lime-accent text-lg"></i> <span>Study Destinations (5)</span>
-                            </button>
-                        </li>
-                        <li>
-                            <button onclick="sidebarNav('services')" class="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white/10 transition text-left">
-                                <i class="ph ph-briefcase text-lime-accent text-lg"></i> <span>All Services</span>
-                            </button>
-                        </li>
-                        <li>
-                            <button onclick="sidebarNav('stories')" class="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white/10 transition text-left">
-                                <i class="ph ph-seal-check text-lime-accent text-lg"></i> <span>Success Stories</span>
-                            </button>
-                        </li>
-                        <li>
-                            <button onclick="sidebarNav('blog')" class="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white/10 transition text-left">
-                                <i class="ph ph-newspaper text-lime-accent text-lg"></i> <span>Blog & Resources</span>
-                            </button>
-                        </li>
-                        <li>
-                            <button onclick="sidebarNav('contact')" class="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white/10 transition text-left">
-                                <i class="ph ph-phone-call text-lime-accent text-lg"></i> <span>Contact Us</span>
-                            </button>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Notice Card inside Curved Sidebar (inspired by reference image) -->
-                <div class="mt-4 rounded-2xl overflow-hidden border border-white/15 bg-gradient-to-r from-cream-100 to-lime-accent/30 text-navy-950 p-3.5">
-                    <div class="flex items-center justify-between">
-                        <div>
-                            <span class="text-[9px] font-bold uppercase tracking-widest text-navy-800">FREE ASSESSMENT</span>
-                            <h4 class="font-serif font-bold text-sm text-navy-950 leading-tight mt-0.5">Book 1-on-1 Counselling</h4>
-                            <button onclick="sidebarNav('consultation')" class="mt-2 inline-flex items-center gap-1 text-[11px] font-bold underline">
-                                Reserve Slot <i class="ph-bold ph-arrow-right"></i>
-                            </button>
-                        </div>
-                        <div class="w-10 h-10 rounded-xl bg-navy-950 text-lime-accent flex items-center justify-center">
-                            <i class="ph-fill ph-airplane-tilt text-xl"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Bottom Actions -->
-            <div class="pt-4 mt-4 border-t border-white/10 space-y-1 text-xs">
-                <button onclick="sidebarNav('admin')" class="w-full flex items-center justify-between px-3 py-2 rounded-xl hover:bg-white/10 text-cream-200/80 transition">
-                    <span class="flex items-center gap-2.5"><i class="ph ph-gear text-base"></i> Admin CMS Dashboard</span>
-                    <i class="ph ph-caret-right"></i>
-                </button>
-                <a href="https://wa.me/917016069692" target="_blank" rel="noopener noreferrer" class="w-full flex items-center gap-2.5 px-3 py-2 rounded-xl hover:bg-emerald-500/20 text-emerald-300 transition">
-                    <i class="fa-brands fa-whatsapp text-base"></i> Instant WhatsApp Chat
-                </a>
-            </div>
-        </div>
-    </aside>
-
-    <!-- ===================================================================== -->
-    <!-- MAIN DYNAMIC CONTENT CONTAINER (Renders All 10+ Pages Seamlessly)     -->
-    <!-- ===================================================================== -->
-    <main id="app-root" class="min-h-screen">
-        <!-- Content dynamically rendered via JavaScript router -->
-    </main>
-
-    <!-- ===================================================================== -->
-    <!-- FOOTER (Consistent Across All Pages)                                  -->
-    <!-- ===================================================================== -->
-    <footer class="bg-navy-950 border-t border-white/10 text-cream-100 pt-20 pb-10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-14 border-b border-white/10">
-                
-                <!-- Brand Column -->
-                <div class="lg:col-span-2 space-y-5">
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-xl bg-lime-accent flex items-center justify-center text-navy-950">
-                            <svg class="w-6 h-6" viewBox="0 0 32 32" fill="none">
-                                <path d="M4 22C10 21 15 16 27 6C22 14 19 20 12 25L15 27C10 27 6 25 4 22Z" fill="#090D16"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <span class="block font-serif text-2xl font-bold text-white leading-none">Godwit</span>
-                            <span class="block text-[11px] uppercase tracking-[0.22em] text-lime-accent mt-1">International</span>
-                        </div>
-                    </div>
-                    <p class="text-sm text-cream-200/75 max-w-md leading-relaxed">
-                        Your dreams deserve a global destination. Let Godwit International guide your journey with structured IELTS & PTE coaching, university selection, and transparent visa guidance.
+                    <p class="mt-6 text-slate-300 text-base sm:text-lg max-w-2xl leading-relaxed">
+                        Assessment-first IELTS & PTE coaching paired with honest, end-to-end student visa guidance across 7,500+ global universities in 10+ countries.
                     </p>
-                    <div class="flex items-center gap-3 pt-1">
-                        <a href="https://www.instagram.com/godwitinternational?lqvp=MWJuc3M0Y3NubmlwMg==" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="w-10 h-10 rounded-full bg-white/5 hover:bg-lime-accent hover:text-navy-950 border border-white/10 flex items-center justify-center transition">
-                            <i class="fa-brands fa-instagram text-lg"></i>
-                        </a>
-                        <a href="https://wa.me/917016069692" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="w-10 h-10 rounded-full bg-white/5 hover:bg-lime-accent hover:text-navy-950 border border-white/10 flex items-center justify-center transition">
-                            <i class="fa-brands fa-whatsapp text-lg"></i>
-                        </a>
-                        <button onclick="navigateTo('consultation')" aria-label="Book Consultation" class="px-4 py-2 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-medium text-cream-100 transition">
-                            Book Free Assessment →
+
+                    <!-- Reference-style White Pill Action Bar -->
+                    <div class="mt-8 bg-white rounded-full p-2 pl-5 shadow-2xl max-w-xl flex items-center justify-between gap-2">
+                        <div class="flex items-center gap-3 flex-1 min-w-0">
+                            <i class="fa-solid fa-magnifying-glass text-slate-400 text-sm"></i>
+                            <select id="hero-goal-select" aria-label="Select your study goal" class="w-full bg-transparent text-slate-800 text-xs sm:text-sm font-medium focus:outline-none truncate">
+                                <option value="IELTS / PTE Diagnostic & Coaching">I want to score Band 8+ in IELTS / PTE</option>
+                                <option value="Student Visa - UK / USA / Canada">Student Visa for UK, USA, or Canada</option>
+                                <option value="Student Visa - Australia / NZ / Europe">Study in Australia, NZ, or Schengen Europe</option>
+                                <option value="Visa Refusal Re-Application">Previous Visa Refusal Re-Application</option>
+                            </select>
+                        </div>
+                        <button onclick="scrollToContactWithGoal()" class="btn-glow shrink-0 px-6 py-3 rounded-full bg-lavender-500 hover:bg-lavender-600 text-white text-xs sm:text-sm font-semibold">
+                            Explore
                         </button>
                     </div>
+
+                    <!-- Trust Metrics Row -->
+                    <div class="mt-10 grid grid-cols-3 gap-4 max-w-lg">
+                        <div class="bg-white/5 border border-white/10 rounded-2xl p-3.5">
+                            <div class="text-xl sm:text-2xl font-extrabold text-white">5.0 <i class="fa-solid fa-star text-amber-400 text-base"></i></div>
+                            <div class="text-xs text-slate-400 mt-0.5">Google Rating</div>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 rounded-2xl p-3.5">
+                            <div class="text-xl sm:text-2xl font-extrabold text-skybrand-400">500+</div>
+                            <div class="text-xs text-slate-400 mt-0.5">Student Placements</div>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 rounded-2xl p-3.5">
+                            <div class="text-xl sm:text-2xl font-extrabold text-lavender-400">7,500+</div>
+                            <div class="text-xs text-slate-400 mt-0.5">Partner Universities</div>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Quick Links -->
-                <div>
-                    <h4 class="font-serif text-base font-semibold text-white mb-4">Consultancy</h4>
-                    <ul class="space-y-2.5 text-sm text-cream-200/75">
-                        <li><button onclick="navigateTo('about')" class="hover:text-lime-accent transition">About Us</button></li>
-                        <li><button onclick="navigateTo('ielts')" class="hover:text-lime-accent transition">IELTS Coaching</button></li>
-                        <li><button onclick="navigateTo('visa')" class="hover:text-lime-accent transition">Visa & Immigration</button></li>
-                        <li><button onclick="navigateTo('services')" class="hover:text-lime-accent transition">All Services</button></li>
-                        <li><button onclick="navigateTo('stories')" class="hover:text-lime-accent transition">Student Success Stories</button></li>
-                        <li><button onclick="navigateTo('blog')" class="hover:text-lime-accent transition">Blog & Resources</button></li>
-                    </ul>
-                </div>
+                <!-- Right Column: Stylized Student & Brand Emblem Card (Reference-inspired) -->
+                <div class="lg:col-span-5 reveal flex justify-center">
+                    <div class="relative w-full max-w-md">
+                        <!-- Back Purple Blob Card -->
+                        <div class="relative rounded-[2.5rem] bg-gradient-to-b from-lavender-500/30 to-plum-800/80 border border-white/15 p-8 backdrop-blur-md shadow-2xl animate-float">
+                            <!-- Floating Top-Left Mini Card -->
+                            <div class="absolute -top-5 -left-4 bg-sky-100 text-plum-950 px-4 py-2.5 rounded-2xl shadow-xl font-bold text-xs flex items-center gap-2 -rotate-6">
+                                <i class="fa-solid fa-passport text-skybrand-500 text-base"></i>
+                                <span>100% Refusal Recovery</span>
+                            </div>
 
-                <!-- Study Destinations -->
-                <div>
-                    <h4 class="font-serif text-base font-semibold text-white mb-4">Destinations</h4>
-                    <ul class="space-y-2.5 text-sm text-cream-200/75">
-                        <li><button onclick="navigateTo('country', 'canada')" class="hover:text-lime-accent transition">Study in Canada</button></li>
-                        <li><button onclick="navigateTo('country', 'uk')" class="hover:text-lime-accent transition">Study in United Kingdom</button></li>
-                        <li><button onclick="navigateTo('country', 'australia')" class="hover:text-lime-accent transition">Study in Australia</button></li>
-                        <li><button onclick="navigateTo('country', 'usa')" class="hover:text-lime-accent transition">Study in United States</button></li>
-                        <li><button onclick="navigateTo('country', 'nz')" class="hover:text-lime-accent transition">Study in New Zealand</button></li>
-                        <li><button onclick="navigateTo('tools', 'finder')" class="text-lime-accent hover:underline transition">University Finder Tool</button></li>
-                    </ul>
-                </div>
+                            <!-- Floating Top-Right Graduation Cap Badge -->
+                            <div class="absolute -top-6 -right-3 w-14 h-14 rounded-2xl bg-rose-500 text-white flex items-center justify-center shadow-xl rotate-12">
+                                <i class="fa-solid fa-graduation-cap text-2xl"></i>
+                            </div>
 
-                <!-- Tools & Legal -->
-                <div>
-                    <h4 class="font-serif text-base font-semibold text-white mb-4">Student Tools & Legal</h4>
-                    <ul class="space-y-2.5 text-sm text-cream-200/75">
-                        <li><button onclick="navigateTo('tools', 'calculator')" class="hover:text-lime-accent transition">IELTS Band Calculator</button></li>
-                        <li><button onclick="navigateTo('consultation')" class="hover:text-lime-accent transition">Book Appointment</button></li>
-                        <li><button onclick="navigateTo('contact')" class="hover:text-lime-accent transition">Contact Office</button></li>
-                        <li><button onclick="navigateTo('legal', 'privacy')" class="hover:text-lime-accent transition">Privacy Policy</button></li>
-                        <li><button onclick="navigateTo('legal', 'terms')" class="hover:text-lime-accent transition">Terms & Visa Disclaimer</button></li>
-                        <li><button onclick="navigateTo('admin')" class="text-cream-200/50 hover:text-lime-accent transition">Admin Dashboard</button></li>
-                    </ul>
+                            <!-- Central Brand Showcase -->
+                            <div class="bg-white rounded-3xl p-6 shadow-inner flex flex-col items-center text-center">
+                                <img src="Godwit Logo (1).png" alt="Godwit International" class="w-44 h-44 object-contain"
+                                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                <div class="hidden flex-col items-center py-4">
+                                    <div class="w-24 h-24 rounded-full bg-skybrand-500/15 flex items-center justify-center mb-3">
+                                        <i class="fa-solid fa-earth-americas text-5xl text-skybrand-500"></i>
+                                    </div>
+                                    <span class="font-extrabold text-xl text-plum-950">GODWIT INTERNATIONAL</span>
+                                </div>
+                                <div class="mt-3 inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-plum-950 text-white text-xs font-semibold">
+                                    <i class="fa-solid fa-award text-amber-400"></i>
+                                    <span>Student Visa Experts • Vadodara</span>
+                                </div>
+                            </div>
+
+                            <!-- Bottom Floating Achievement Pill -->
+                            <div class="mt-6 bg-plum-950/90 border border-white/10 rounded-2xl p-4 flex items-center justify-between">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center">
+                                        <i class="fa-solid fa-check-double"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-xs font-bold text-white">Free Diagnostic Assessment</p>
+                                        <p class="text-[11px] text-slate-400">Mock Test + Demo + Custom Roadmap</p>
+                                    </div>
+                                </div>
+                                <a href="#contact" class="text-xs font-bold text-lavender-400 hover:underline">Claim →</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- Visa Disclaimer & Copyright -->
-            <div class="pt-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-xs text-cream-200/55">
-                <p class="max-w-3xl leading-relaxed">
-                    <strong>Immigration & Visa Disclaimer:</strong> Godwit International provides educational counselling, test preparation, and visa documentation guidance. All visa and immigration decisions are made solely by the respective government authorities and embassies; no consultancy can guarantee visa approval.
+            <!-- Destination & Exam Partners Strip (Matches Reference Partner Bar) -->
+            <div class="mt-16 reveal">
+                <div class="relative rounded-2xl border border-white/15 bg-white/[0.03] backdrop-blur-sm px-6 py-6">
+                    <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-plum-950 px-4 text-xs font-semibold tracking-wider uppercase text-slate-300">
+                        Global Destinations & Test Prep
+                    </span>
+                    <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-4 items-center text-center">
+                        <div class="text-sm font-bold text-slate-200 hover:text-skybrand-400 transition-colors"><i class="fa-solid fa-landmark mr-1.5 text-lavender-400"></i>UK</div>
+                        <div class="text-sm font-bold text-slate-200 hover:text-skybrand-400 transition-colors"><i class="fa-solid fa-flag-usa mr-1.5 text-skybrand-400"></i>USA</div>
+                        <div class="text-sm font-bold text-slate-200 hover:text-skybrand-400 transition-colors"><i class="fa-brands fa-canadian-maple-leaf mr-1.5 text-rose-400"></i>Canada</div>
+                        <div class="text-sm font-bold text-slate-200 hover:text-skybrand-400 transition-colors"><i class="fa-solid fa-earth-oceania mr-1.5 text-emerald-400"></i>Australia</div>
+                        <div class="text-sm font-bold text-slate-200 hover:text-skybrand-400 transition-colors"><i class="fa-solid fa-mountain-sun mr-1.5 text-teal-400"></i>New Zealand</div>
+                        <div class="text-sm font-bold text-slate-200 hover:text-skybrand-400 transition-colors"><i class="fa-solid fa-euro-sign mr-1.5 text-amber-400"></i>Germany</div>
+                        <div class="text-sm font-bold text-slate-200 hover:text-skybrand-400 transition-colors"><i class="fa-solid fa-tower-observation mr-1.5 text-indigo-400"></i>France</div>
+                        <div class="text-sm font-bold text-slate-200 hover:text-skybrand-400 transition-colors"><i class="fa-solid fa-sun mr-1.5 text-orange-400"></i>Spain & Italy</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== ABOUT US SECTION (Light Premium Contrast Section) ==================== -->
+    <section id="about" class="py-20 lg:py-28 bg-slate-50 text-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Our Story -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center reveal">
+                <div class="lg:col-span-6">
+                    <span class="inline-block px-3.5 py-1 rounded-full bg-lavender-500/10 text-lavender-600 text-xs font-bold uppercase tracking-wider mb-3">
+                        Our Story • How We Started
+                    </span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-plum-950 leading-tight">
+                        Honest, Personalised Guidance for Every Student's Global Dream
+                    </h2>
+                    <div class="mt-5 space-y-4 text-slate-600 text-sm sm:text-base leading-relaxed">
+                        <p>
+                            <strong class="text-plum-950">Godwit International</strong> was born from a simple but powerful belief — that every student deserves honest, personalised guidance when navigating the complex world of overseas education. Founded by a team of experienced education professionals in <strong class="text-plum-950">Vadodara</strong>, we set out to bridge the gap between aspiring students and their dream universities abroad.
+                        </p>
+                        <p>
+                            Located on <strong class="text-plum-950">Sama-Savli Road, opposite Urmi School in New Sama</strong>, our office has become a trusted destination for hundreds of families across Gujarat. From our first consultation to our most recent visa approval, we have remained committed to transparency, personalisation, and genuine care for every student's future.
+                        </p>
+                        <p>
+                            Today, Godwit International is recognised as one of Vadodara's premier study abroad consultancies — with a <strong class="text-lavender-600">5.0 Google rating</strong>, <strong class="text-lavender-600">500+ successful student placements</strong>, and a growing network spanning <strong class="text-lavender-600">10+ countries</strong>.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Core Values 2x2 Grid -->
+                <div class="lg:col-span-6">
+                    <div class="mb-4">
+                        <span class="text-xs font-bold uppercase tracking-wider text-lavender-600">What We Stand For</span>
+                        <h3 class="text-2xl font-bold text-plum-950">Our Core Values</h3>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md transition-shadow">
+                            <div class="w-11 h-11 rounded-xl bg-lavender-500/15 text-lavender-600 flex items-center justify-center mb-4">
+                                <i class="fa-solid fa-shield-halved text-lg"></i>
+                            </div>
+                            <h4 class="font-bold text-plum-950 text-base">Transparency First</h4>
+                            <p class="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed">
+                                We believe in complete honesty about costs, timelines, and realistic outcomes — no hidden fees, no false promises.
+                            </p>
+                        </div>
+
+                        <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md transition-shadow">
+                            <div class="w-11 h-11 rounded-xl bg-skybrand-500/15 text-skybrand-500 flex items-center justify-center mb-4">
+                                <i class="fa-solid fa-user-check text-lg"></i>
+                            </div>
+                            <h4 class="font-bold text-plum-950 text-base">Student-Centred</h4>
+                            <p class="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed">
+                                Every roadmap we create is tailored to the individual student's profile, goals, and budget — never a one-size-fits-all approach.
+                            </p>
+                        </div>
+
+                        <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md transition-shadow">
+                            <div class="w-11 h-11 rounded-xl bg-amber-500/15 text-amber-600 flex items-center justify-center mb-4">
+                                <i class="fa-solid fa-compass text-lg"></i>
+                            </div>
+                            <h4 class="font-bold text-plum-950 text-base">Expert Guidance</h4>
+                            <p class="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed">
+                                Our counselors bring deep knowledge of global admissions, visa regulations, and university requirements across 10+ countries.
+                            </p>
+                        </div>
+
+                        <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md transition-shadow">
+                            <div class="w-11 h-11 rounded-xl bg-emerald-500/15 text-emerald-600 flex items-center justify-center mb-4">
+                                <i class="fa-solid fa-handshake-angle text-lg"></i>
+                            </div>
+                            <h4 class="font-bold text-plum-950 text-base">End-to-End Support</h4>
+                            <p class="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed">
+                                From the first consultation to post-landing assistance, we are with our students at every step of their journey.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Our People / Meet Our Team -->
+            <div class="mt-20 reveal">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="text-xs font-bold uppercase tracking-wider text-lavender-600">Our People</span>
+                    <h3 class="font-serif text-3xl sm:text-4xl font-bold text-plum-950 mt-1">Meet Our Team</h3>
+                    <p class="text-slate-600 text-sm sm:text-base mt-2">
+                        Experienced counselors dedicated to turning your global education dreams into reality.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                    <!-- Aayush Patel -->
+                    <div class="bg-white rounded-3xl p-7 sm:p-8 border border-slate-200 shadow-lg flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center gap-4">
+                                <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-plum-900 to-lavender-600 text-white font-serif font-bold text-2xl flex items-center justify-center shadow-md shrink-0">
+                                    AP
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold text-plum-950">Aayush Patel</h4>
+                                    <p class="text-xs sm:text-sm font-semibold text-lavender-600">Co-founder & Senior Counsellor</p>
+                                </div>
+                            </div>
+                            <p class="mt-5 text-slate-600 text-sm leading-relaxed">
+                                Aayush brings deep expertise in overseas university admissions across the UK, USA, Canada, and Australia. A passionate advocate for student success, he has personally guided hundreds of students to their dream universities and specialises in building strong, compelling application profiles.
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-100 flex flex-wrap gap-2">
+                            <span class="px-3 py-1 rounded-full bg-plum-950 text-white text-xs font-medium">UK, USA, Canada Admissions</span>
+                            <span class="px-3 py-1 rounded-full bg-lavender-500/10 text-lavender-600 text-xs font-medium">Profile Strategy</span>
+                        </div>
+                    </div>
+
+                    <!-- Akanksha Singh -->
+                    <div class="bg-white rounded-3xl p-7 sm:p-8 border border-slate-200 shadow-lg flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center gap-4">
+                                <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-skybrand-500 to-indigo-700 text-white font-serif font-bold text-2xl flex items-center justify-center shadow-md shrink-0">
+                                    AS
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold text-plum-950">Akanksha Singh</h4>
+                                    <p class="text-xs sm:text-sm font-semibold text-skybrand-500">Co-founder & Education Specialist</p>
+                                </div>
+                            </div>
+                            <p class="mt-5 text-slate-600 text-sm leading-relaxed">
+                                Akanksha specialises in visa documentation, financial file preparation, and country-specific education pathways. With an exceptional visa approval track record, she ensures every student's application is thorough, compliant, and compelling — from the first draft to the final submission.
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-100 flex flex-wrap gap-2">
+                            <span class="px-3 py-1 rounded-full bg-plum-950 text-white text-xs font-medium">Visa Documentation</span>
+                            <span class="px-3 py-1 rounded-full bg-skybrand-500/10 text-skybrand-500 text-xs font-medium">Financial File Structuring</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== IELTS & TEST PREP SECTION (Reference-Inspired Card Grid + Tabs) ==================== -->
+    <section id="ielts" class="py-20 lg:py-28 bg-plum-950 text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Header + Category Pill Filter (Matches Reference "Popular Courses" Bar) -->
+            <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12 reveal">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-wider text-skybrand-400">3x Faster Target Band Scores</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold mt-2">
+                        Flagship <span class="text-lavender-400">Coaching</span> Programs
+                    </h2>
+                    <p class="text-slate-300 text-sm sm:text-base mt-3 max-w-2xl">
+                        Assessment-first, hyper-personalized training for <strong class="text-white">IELTS (Academic & General), PTE, TOEFL, CELPIP, and Duolingo</strong>, plus <strong class="text-white">SAT, GRE, and GMAT</strong>.
+                    </p>
+                </div>
+
+                <!-- Interactive Filter Tabs -->
+                <div class="inline-flex flex-wrap gap-1.5 p-1.5 rounded-full bg-plum-900 border border-white/10 self-start">
+                    <button onclick="filterCourses('all', this)" class="course-tab px-4 py-2 rounded-full text-xs font-semibold bg-lavender-500 text-white transition-all">All Programs</button>
+                    <button onclick="filterCourses('flagship', this)" class="course-tab px-4 py-2 rounded-full text-xs font-semibold text-slate-300 hover:text-white transition-all">IELTS & PTE</button>
+                    <button onclick="filterCourses('modes', this)" class="course-tab px-4 py-2 rounded-full text-xs font-semibold text-slate-300 hover:text-white transition-all">Delivery Modes</button>
+                    <button onclick="filterCourses('aptitude', this)" class="course-tab px-4 py-2 rounded-full text-xs font-semibold text-slate-300 hover:text-white transition-all">SAT / GRE / GMAT</button>
+                </div>
+            </div>
+
+            <!-- Course Packages & Delivery Modes Grid -->
+            <div id="courses-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 reveal">
+                <!-- Card 1: Free 1-Week Crash Course -->
+                <div data-category="flagship" class="course-card premium-card rounded-3xl bg-plum-900 border border-white/10 overflow-hidden flex flex-col">
+                    <div class="h-40 bg-gradient-to-br from-emerald-500 to-teal-700 p-6 flex flex-col justify-between relative">
+                        <div class="flex justify-between items-center">
+                            <span class="px-3 py-1 rounded-full bg-black/30 text-white text-[11px] font-bold">FREE WITH VISA CONSULTATION</span>
+                            <i class="fa-solid fa-bolt text-white/80 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-extrabold text-white">1-Week IELTS / PTE Crash Course</h3>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between text-xs text-lavender-400 font-semibold mb-3">
+                                <span><i class="fa-solid fa-play-circle mr-1"></i> 4 Intensive Brush-Up Classes</span>
+                                <span class="px-2.5 py-0.5 rounded-md bg-emerald-500/15 text-emerald-400">₹0 (Exam-Ready)</span>
+                            </div>
+                            <p class="text-slate-300 text-sm leading-relaxed">
+                                Included at no cost with student visa consultation or for candidates who score exam-ready on our initial diagnostic mock test. Includes full on-site reading library access.
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
+                            <span class="text-xs text-slate-400">Free Books & Audio Notes</span>
+                            <a href="#contact" class="text-xs font-bold text-lavender-400 hover:text-white underline">Book Free Assessment →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Short-Term Brush-Up Course -->
+                <div data-category="flagship" class="course-card premium-card rounded-3xl bg-plum-900 border border-white/10 overflow-hidden flex flex-col">
+                    <div class="h-40 bg-gradient-to-br from-lavender-500 to-indigo-700 p-6 flex flex-col justify-between relative">
+                        <div class="flex justify-between items-center">
+                            <span class="px-3 py-1 rounded-full bg-black/30 text-white text-[11px] font-bold">15 DAYS – 1 MONTH</span>
+                            <i class="fa-solid fa-bullseye text-white/80 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-extrabold text-white">Targeted Score Booster</h3>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between text-xs text-lavender-400 font-semibold mb-3">
+                                <span><i class="fa-solid fa-layer-group mr-1"></i> Module-Wise Mastery</span>
+                                <span class="px-2.5 py-0.5 rounded-md bg-white/10 text-white">From ₹5,000</span>
+                            </div>
+                            <p class="text-slate-300 text-sm leading-relaxed">
+                                Designed for candidates needing targeted band improvements in Listening, Reading, Writing, or Speaking with 2–3 daily module-specific tests and private mentor groups.
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
+                            <span class="text-xs text-slate-400">IELTS • PTE • TOEFL • Duolingo</span>
+                            <a href="#contact" class="text-xs font-bold text-lavender-400 hover:text-white underline">Enroll Now →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: Comprehensive Foundation-to-IELTS -->
+                <div data-category="flagship" class="course-card premium-card rounded-3xl bg-plum-900 border border-white/10 overflow-hidden flex flex-col">
+                    <div class="h-40 bg-gradient-to-br from-amber-500 to-orange-600 p-6 flex flex-col justify-between relative">
+                        <div class="flex justify-between items-center">
+                            <span class="px-3 py-1 rounded-full bg-black/30 text-white text-[11px] font-bold">3 – 4 MONTHS COMPREHENSIVE</span>
+                            <i class="fa-solid fa-stairs text-white/80 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-extrabold text-white">Foundation-to-IELTS Mastery</h3>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between text-xs text-amber-300 font-semibold mb-3">
+                                <span><i class="fa-solid fa-book-open mr-1"></i> Beginner to Band 8+</span>
+                                <span class="px-2.5 py-0.5 rounded-md bg-white/10 text-white">Up to ₹50,000</span>
+                            </div>
+                            <p class="text-slate-300 text-sm leading-relaxed">
+                                Tailored for non-English medium students or beginners. Starts from 6th-grade level English grammar, tenses, and parts of speech before progressing to full IELTS modules.
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
+                            <span class="text-xs text-slate-400">Strictly 1-on-1 Offline Available</span>
+                            <a href="#contact" class="text-xs font-bold text-lavender-400 hover:text-white underline">Enroll Now →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4: Offline 1-on-1 Coaching -->
+                <div data-category="modes" class="course-card premium-card rounded-3xl bg-plum-900 border border-white/10 overflow-hidden flex flex-col">
+                    <div class="h-40 bg-gradient-to-br from-skybrand-500 to-blue-700 p-6 flex flex-col justify-between">
+                        <div class="flex justify-between items-center">
+                            <span class="px-3 py-1 rounded-full bg-black/30 text-white text-[11px] font-bold">MODE 1 • PREMIUM OFFLINE</span>
+                            <i class="fa-solid fa-user-tie text-white/80 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-extrabold text-white">Strictly 1-on-1 Personal Coaching</h3>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            Zero crowded classrooms. Offline sessions at our New Sama, Vadodara center are strictly 1-on-1 (or custom peer groups you bring yourself to split costs) with full reading library access.
+                        </p>
+                        <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
+                            <span class="text-xs text-skybrand-400 font-semibold">1 Student : 1 Mentor</span>
+                            <a href="#contact" class="text-xs font-bold text-lavender-400 hover:text-white underline">Book Demo →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5: Online & Hybrid Flexible Batches -->
+                <div data-category="modes" class="course-card premium-card rounded-3xl bg-plum-900 border border-white/10 overflow-hidden flex flex-col">
+                    <div class="h-40 bg-gradient-to-br from-fuchsia-600 to-purple-800 p-6 flex flex-col justify-between">
+                        <div class="flex justify-between items-center">
+                            <span class="px-3 py-1 rounded-full bg-black/30 text-white text-[11px] font-bold">MODE 2 & 3 • ONLINE / HYBRID</span>
+                            <i class="fa-solid fa-laptop-file text-white/80 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-extrabold text-white">Working-Pro Online & Hybrid</h3>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            Extended timings (7:00–8:00 AM & 10:00–11:00 PM) with 6-month Google Drive recordings. Hybrid blends online lectures with weekly offline 1-on-1 doubt-solving.
+                        </p>
+                        <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
+                            <span class="text-xs text-fuchsia-300 font-semibold">6-Mo Cloud Recordings</span>
+                            <a href="#contact" class="text-xs font-bold text-lavender-400 hover:text-white underline">Join Batch →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 6: SAT, GRE & GMAT Secondary Programs -->
+                <div data-category="aptitude" class="course-card premium-card rounded-3xl bg-plum-900 border border-white/10 overflow-hidden flex flex-col">
+                    <div class="h-40 bg-gradient-to-br from-rose-500 to-pink-700 p-6 flex flex-col justify-between">
+                        <div class="flex justify-between items-center">
+                            <span class="px-3 py-1 rounded-full bg-black/30 text-white text-[11px] font-bold">GLOBAL APTITUDE EXAMS</span>
+                            <i class="fa-solid fa-brain text-white/80 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-extrabold text-white">SAT, GRE & GMAT Prep</h3>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            Specialized quantitative and verbal coaching for undergraduate (SAT) and graduate/business school (GRE, GMAT) admissions with diagnostic analytics and study portals.
+                        </p>
+                        <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
+                            <span class="text-xs text-rose-300 font-semibold">CELPIP & Duolingo Also Offered</span>
+                            <a href="#contact" class="text-xs font-bold text-lavender-400 hover:text-white underline">Get Syllabus →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3-Stage Training Methodology Banner -->
+            <div class="mt-14 rounded-3xl bg-gradient-to-r from-plum-900 via-plum-800 to-plum-900 border border-white/10 p-6 sm:p-8 reveal">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+                    <div>
+                        <h3 class="text-xl sm:text-2xl font-bold text-white">Our 3-Stage Assessment-First Methodology</h3>
+                        <p class="text-xs sm:text-sm text-slate-300 mt-1">Every student is added to a dedicated private mentor group for continuous homework review & feedback.</p>
+                    </div>
+                    <span class="px-4 py-2 rounded-full bg-lavender-500/20 border border-lavender-400/30 text-lavender-300 text-xs font-semibold">
+                        Free Books • Audio Notes • Online Portal • Reading Library
+                    </span>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                    <div class="bg-plum-950/70 rounded-2xl p-5 border border-white/10">
+                        <span class="text-xs font-bold text-skybrand-400 uppercase">Stage 01 • Foundation Stage</span>
+                        <h4 class="font-bold text-base text-white mt-1">Pure Language & Grammar</h4>
+                        <p class="text-xs text-slate-300 mt-2 leading-relaxed">Focus is purely on core language fundamentals. No mock tests are conducted until grammar, vocabulary, and sentence structure are rock-solid.</p>
+                    </div>
+                    <div class="bg-plum-950/70 rounded-2xl p-5 border border-white/10">
+                        <span class="text-xs font-bold text-lavender-400 uppercase">Stage 02 • Active Module Stage</span>
+                        <h4 class="font-bold text-base text-white mt-1">2–3 Daily Module Tests</h4>
+                        <p class="text-xs text-slate-300 mt-2 leading-relaxed">Listening, Reading, Writing, and Speaking are taught and tested independently until you master each individual module.</p>
+                    </div>
+                    <div class="bg-plum-950/70 rounded-2xl p-5 border border-white/10">
+                        <span class="text-xs font-bold text-emerald-400 uppercase">Stage 03 • Exam-Ready Stage</span>
+                        <h4 class="font-bold text-base text-white mt-1">Full-Length Mock Simulations</h4>
+                        <p class="text-xs text-slate-300 mt-2 leading-relaxed">2 full-length mock tests per week (ramping up to 2 per day with immediate 1-on-1 feedback right before your exam date).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== STUDY ABROAD CONSULTANCY SECTION ==================== -->
+    <section id="study-abroad" class="py-20 lg:py-28 bg-white text-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <span class="inline-block px-3.5 py-1 rounded-full bg-skybrand-500/10 text-skybrand-500 text-xs font-bold uppercase tracking-wider mb-3">
+                    Student-First Approach • Zero Country Bias
+                </span>
+                <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-plum-950">
+                    Study Abroad Across <span class="text-lavender-600">7,500+</span> Global Universities
+                </h2>
+                <p class="text-slate-600 text-sm sm:text-base mt-4">
+                    Direct partnerships with 7,500+ universities worldwide—plus complete assistance for non-partner and top public universities across the USA, UK, Canada, Australia, New Zealand, Germany, France, Spain, and Italy.
                 </p>
-                <p class="shrink-0">© <span id="year-span">2026</span> Godwit International. All rights reserved.</p>
             </div>
+
+            <!-- 3-3-2 University Shortlisting & Key Pillars -->
+            <div id="services" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 reveal">
+                <div class="p-7 rounded-3xl bg-slate-50 border border-slate-200/90 hover:border-lavender-400 transition-all">
+                    <div class="w-12 h-12 rounded-2xl bg-lavender-600 text-white flex items-center justify-center mb-5 shadow-md">
+                        <i class="fa-solid fa-layer-group text-lg"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-plum-950">Precision University Shortlisting</h3>
+                    <p class="text-sm text-slate-600 mt-2 leading-relaxed">
+                        Using profile, course, and module matching, we shortlist tailored options across <strong>3 Dream</strong>, <strong>3 Realistic</strong>, and <strong>2 Safety</strong> universities—never restricting you to partner lists.
+                    </p>
+                </div>
+
+                <div class="p-7 rounded-3xl bg-slate-50 border border-slate-200/90 hover:border-lavender-400 transition-all">
+                    <div class="w-12 h-12 rounded-2xl bg-emerald-600 text-white flex items-center justify-center mb-5 shadow-md">
+                        <i class="fa-solid fa-ticket text-lg"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-plum-950">Fee Waivers & Scholarships</h3>
+                    <p class="text-sm text-slate-600 mt-2 leading-relaxed">
+                        Save <strong>$50–$250 per application</strong> with our exclusive application fee waivers and vouchers, while we actively identify and apply for eligible merit scholarships on your behalf.
+                    </p>
+                </div>
+
+                <div class="p-7 rounded-3xl bg-slate-50 border border-slate-200/90 hover:border-lavender-400 transition-all">
+                    <div class="w-12 h-12 rounded-2xl bg-skybrand-500 text-white flex items-center justify-center mb-5 shadow-md">
+                        <i class="fa-solid fa-file-pen text-lg"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-plum-950">SOP, LOR & Resume Tiers</h3>
+                    <p class="text-sm text-slate-600 mt-2 leading-relaxed">
+                        Compelling Statements of Purpose, Letters of Recommendation, and academic CVs crafted across multiple customization tiers alongside university admission interview prep.
+                    </p>
+                </div>
+
+                <div class="p-7 rounded-3xl bg-slate-50 border border-slate-200/90 hover:border-lavender-400 transition-all">
+                    <div class="w-12 h-12 rounded-2xl bg-amber-500 text-white flex items-center justify-center mb-5 shadow-md">
+                        <i class="fa-solid fa-building-columns text-lg"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-plum-950">Education Loans & Financial Plans</h3>
+                    <p class="text-sm text-slate-600 mt-2 leading-relaxed">
+                        Direct collaboration with all major Indian banks and NBFCs for smooth education loan approvals, plus customized family financial plans and international tuition deposit support.
+                    </p>
+                </div>
+
+                <div class="p-7 rounded-3xl bg-slate-50 border border-slate-200/90 hover:border-lavender-400 transition-all">
+                    <div class="w-12 h-12 rounded-2xl bg-indigo-600 text-white flex items-center justify-center mb-5 shadow-md">
+                        <i class="fa-solid fa-house-chimney text-lg"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-plum-950">Student Housing Connections</h3>
+                    <p class="text-sm text-slate-600 mt-2 leading-relaxed">
+                        Verified on-campus and off-campus student accommodation booking so you land in your destination city with a safe, pre-arranged home.
+                    </p>
+                </div>
+
+                <div class="p-7 rounded-3xl bg-slate-50 border border-slate-200/90 hover:border-lavender-400 transition-all">
+                    <div class="w-12 h-12 rounded-2xl bg-rose-600 text-white flex items-center justify-center mb-5 shadow-md">
+                        <i class="fa-solid fa-plane-departure text-lg"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-plum-950">Pre-Departure & Immigration</h3>
+                    <p class="text-sm text-slate-600 mt-2 leading-relaxed">
+                        End-to-end mentorship extending from your very first counseling session all the way until you land and smoothly clear port-of-entry immigration abroad.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== VISA SERVICES & 8-STEP PROCESS SECTION ==================== -->
+    <section id="visa" class="py-20 lg:py-28 bg-plum-950 text-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start reveal">
+                <!-- Left Column: Visa Specialties & Refusal Highlight -->
+                <div class="lg:col-span-5">
+                    <span class="inline-block px-3.5 py-1 rounded-full bg-lavender-500/20 text-lavender-300 text-xs font-bold uppercase tracking-wider mb-3">
+                        Godwit International: Student Visa Experts
+                    </span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold leading-tight">
+                        High-Approval Visa Consultancy & <span class="text-skybrand-400">Refusal Recovery</span>
+                    </h2>
+                    <p class="mt-4 text-slate-300 text-sm sm:text-base leading-relaxed">
+                        Student Visas are our #1 core specialty across Canada, USA, UK, Australia, New Zealand, and Schengen Europe (Germany, France, Spain, Italy).
+                    </p>
+
+                    <!-- Visa Categories -->
+                    <div class="mt-7 space-y-3.5">
+                        <div class="p-4 rounded-2xl bg-plum-900 border border-white/10 flex items-start gap-3.5">
+                            <div class="w-10 h-10 rounded-xl bg-lavender-500/20 text-lavender-400 flex items-center justify-center shrink-0 mt-0.5">
+                                <i class="fa-solid fa-user-graduate"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Student Visas (#1 Core Specialty)</h4>
+                                <p class="text-xs text-slate-300 mt-1">Complete file structuring, financial compliance, SOP justification, and 1-on-1 mock visa interviews.</p>
+                            </div>
+                        </div>
+
+                        <div class="p-4 rounded-2xl bg-plum-900 border border-white/10 flex items-start gap-3.5">
+                            <div class="w-10 h-10 rounded-xl bg-skybrand-500/20 text-skybrand-400 flex items-center justify-center shrink-0 mt-0.5">
+                                <i class="fa-solid fa-people-roof"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Visitor / Tourist Visas (Parents & Families)</h4>
+                                <p class="text-xs text-slate-300 mt-1">Hassle-free tourist and visitor visa filings, especially for parents traveling with or visiting students abroad.</p>
+                            </div>
+                        </div>
+
+                        <div class="p-4 rounded-2xl bg-plum-900 border border-white/10 flex items-start gap-3.5">
+                            <div class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center shrink-0 mt-0.5">
+                                <i class="fa-solid fa-briefcase"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Work Placements & Work Visas</h4>
+                                <p class="text-xs text-slate-300 mt-1">Strategic work visa assistance when verified international employment opportunities arise.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Post-Refusal Callout Box -->
+                    <div class="mt-6 p-6 rounded-3xl bg-gradient-to-br from-emerald-600/25 to-teal-900/40 border border-emerald-400/30">
+                        <div class="flex items-center gap-3">
+                            <span class="px-3 py-1 rounded-full bg-emerald-500 text-plum-950 font-extrabold text-xs">100% ACCEPTANCE TRACK RECORD</span>
+                        </div>
+                        <h4 class="font-bold text-lg text-white mt-3">Post-Refusal Visa Guidance</h4>
+                        <p class="text-xs sm:text-sm text-slate-200 mt-2 leading-relaxed">
+                            Previously rejected due to poor guidance or improper documentation elsewhere? We audit refusal notes, restructure your financial and academic profile, and turn refusals into approvals.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Right Column: 8-Step Complete Visa Process -->
+                <div class="lg:col-span-7">
+                    <div class="rounded-3xl bg-plum-900/90 border border-white/10 p-6 sm:p-8 shadow-2xl">
+                        <h3 class="text-xl sm:text-2xl font-bold text-white mb-6 flex items-center gap-2.5">
+                            <i class="fa-solid fa-route text-lavender-400"></i>
+                            <span>Complete 8-Step Student Visa Roadmap</span>
+                        </h3>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="p-4 rounded-2xl bg-plum-950/80 border border-white/10">
+                                <span class="text-xs font-extrabold text-lavender-400">STEP 01</span>
+                                <h4 class="font-bold text-sm text-white mt-1">Initial Profile Evaluation & Document Sorting</h4>
+                                <p class="text-xs text-slate-400 mt-1">Deep academic, career, and budget assessment to build your roadmap.</p>
+                            </div>
+                            <div class="p-4 rounded-2xl bg-plum-950/80 border border-white/10">
+                                <span class="text-xs font-extrabold text-skybrand-400">STEP 02</span>
+                                <h4 class="font-bold text-sm text-white mt-1">English Proficiency & Diagnostic Mock Testing</h4>
+                                <p class="text-xs text-slate-400 mt-1">Free diagnostic test and targeted IELTS, PTE, or Duolingo preparation.</p>
+                            </div>
+                            <div class="p-4 rounded-2xl bg-plum-950/80 border border-white/10">
+                                <span class="text-xs font-extrabold text-lavender-400">STEP 03</span>
+                                <h4 class="font-bold text-sm text-white mt-1">University Shortlisting & Fee-Waiver Apps</h4>
+                                <p class="text-xs text-slate-400 mt-1">3 Dream / 3 Realistic / 2 Safety picks with $50–$250 fee waiver vouchers.</p>
+                            </div>
+                            <div class="p-4 rounded-2xl bg-plum-950/80 border border-white/10">
+                                <span class="text-xs font-extrabold text-skybrand-400">STEP 04</span>
+                                <h4 class="font-bold text-sm text-white mt-1">SOP/LOR Drafting & University Interview Prep</h4>
+                                <p class="text-xs text-slate-400 mt-1">Tailored application essays and mock credibility interviews.</p>
+                            </div>
+                            <div class="p-4 rounded-2xl bg-plum-950/80 border border-white/10">
+                                <span class="text-xs font-extrabold text-lavender-400">STEP 05</span>
+                                <h4 class="font-bold text-sm text-white mt-1">Offer Acceptance & Tuition Deposit</h4>
+                                <p class="text-xs text-slate-400 mt-1">Seamless offer letter verification and international wire/deposit guidance.</p>
+                            </div>
+                            <div class="p-4 rounded-2xl bg-plum-950/80 border border-white/10">
+                                <span class="text-xs font-extrabold text-skybrand-400">STEP 06</span>
+                                <h4 class="font-bold text-sm text-white mt-1">Education Loan & Financial Documentation</h4>
+                                <p class="text-xs text-slate-400 mt-1">Partner bank/NBFC loan processing and compliant sponsor fund structuring.</p>
+                            </div>
+                            <div class="p-4 rounded-2xl bg-plum-950/80 border border-white/10">
+                                <span class="text-xs font-extrabold text-lavender-400">STEP 07</span>
+                                <h4 class="font-bold text-sm text-white mt-1">Visa Filing, Biometrics & Interview Prep</h4>
+                                <p class="text-xs text-slate-400 mt-1">Error-free embassy filing, VFS biometrics booking, and 1-on-1 visa mock prep.</p>
+                            </div>
+                            <div class="p-4 rounded-2xl bg-plum-950/80 border border-white/10">
+                                <span class="text-xs font-extrabold text-emerald-400">STEP 08</span>
+                                <h4 class="font-bold text-sm text-white mt-1">Accommodation & Pre-Departure Briefing</h4>
+                                <p class="text-xs text-slate-400 mt-1">Housing lock-in, forex/packing checklist, and immigration clearance support.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== BLOG & INSIGHTS SECTION ==================== -->
+    <section id="blog" class="py-20 bg-slate-50 text-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-12 gap-4">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-wider text-lavender-600">Latest Guides & Updates</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-plum-950 mt-1">Study Abroad & IELTS Blog</h2>
+                </div>
+                <a href="#contact" class="text-sm font-bold text-lavender-600 hover:text-plum-950">Ask Our Counselors a Question →</a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-7">
+                <article class="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition-all flex flex-col">
+                    <div class="h-44 bg-gradient-to-tr from-plum-900 to-lavender-600 p-6 flex items-end">
+                        <span class="px-3 py-1 rounded-full bg-white/20 text-white text-xs font-semibold backdrop-blur-sm">IELTS Strategy</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-bold text-lg text-plum-950">Why Assessment-First Coaching Delivers Band 8+ 3x Faster</h3>
+                            <p class="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed">
+                                Discover how isolating Listening, Reading, Writing, and Speaking modules before attempting full mocks eliminates wasted effort.
+                            </p>
+                        </div>
+                        <a href="#contact" class="mt-5 inline-block text-xs font-bold text-lavender-600 hover:underline">Book Free Diagnostic Mock →</a>
+                    </div>
+                </article>
+
+                <article class="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition-all flex flex-col">
+                    <div class="h-44 bg-gradient-to-tr from-skybrand-500 to-blue-800 p-6 flex items-end">
+                        <span class="px-3 py-1 rounded-full bg-white/20 text-white text-xs font-semibold backdrop-blur-sm">Visa Compliance</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-bold text-lg text-plum-950">Turning a Student Visa Refusal into an Approval</h3>
+                            <p class="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed">
+                                Learn the exact financial documentation and SOP restructuring checklist our Vadodara visa specialists use for refusal cases.
+                            </p>
+                        </div>
+                        <a href="#contact" class="mt-5 inline-block text-xs font-bold text-skybrand-500 hover:underline">Request Refusal File Audit →</a>
+                    </div>
+                </article>
+
+                <article class="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition-all flex flex-col">
+                    <div class="h-44 bg-gradient-to-tr from-emerald-600 to-teal-800 p-6 flex items-end">
+                        <span class="px-3 py-1 rounded-full bg-white/20 text-white text-xs font-semibold backdrop-blur-sm">University Admissions</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-bold text-lg text-plum-950">The 3-3-2 University Shortlisting Rule Explained</h3>
+                            <p class="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed">
+                                How balancing Dream, Realistic, and Safety schools—paired with $50–$250 fee waivers—maximizes your admission offers.
+                            </p>
+                        </div>
+                        <a href="#contact" class="mt-5 inline-block text-xs font-bold text-emerald-600 hover:underline">Get Your 7-University List →</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CONTACT & FREE CONSULTATION SECTION ==================== -->
+    <section id="contact" class="py-20 lg:py-28 bg-plum-950 text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                <!-- Left Column: Office Address, Demo Contact Details & Socials -->
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="inline-block px-3.5 py-1 rounded-full bg-lavender-500/20 text-lavender-300 text-xs font-bold uppercase tracking-wider">
+                        Book a Free Consultation
+                    </span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold leading-tight">
+                        Start Your Global Journey With <span class="text-skybrand-400">Godwit International</span>
+                    </h2>
+                    <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                        Visit our Vadodara center for your free IELTS/PTE diagnostic test and 1-on-1 study abroad roadmap, or send us an enquiry online.
+                    </p>
+
+                    <div class="space-y-4 pt-2">
+                        <div class="flex items-start gap-4 p-4 rounded-2xl bg-plum-900 border border-white/10">
+                            <div class="w-11 h-11 rounded-xl bg-lavender-500/20 text-lavender-400 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-location-dot text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm text-white">Vadodara Office</h4>
+                                <p class="text-xs sm:text-sm text-slate-300 mt-1">
+                                    Sama-Savli Road, Opposite Urmi School, New Sama, Vadodara, Gujarat
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 rounded-2xl bg-plum-900 border border-white/10">
+                            <div class="w-11 h-11 rounded-xl bg-skybrand-500/20 text-skybrand-400 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-phone-volume text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm text-white">Call / WhatsApp Helpline</h4>
+                                <a href="tel:+917016069692" class="text-xs sm:text-sm text-skybrand-400 hover:underline mt-1 block font-semibold">
+                                    +91 70160 69692
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 rounded-2xl bg-plum-900 border border-white/10">
+                            <div class="w-11 h-11 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-envelope-open-text text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm text-white">Enquiry Email</h4>
+                                <a href="mailto:admissions@godwitinternational.in" class="text-xs sm:text-sm text-emerald-400 hover:underline mt-1 block font-semibold">
+                                    admissions@godwitinternational.in
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Instagram Link Card -->
+                        <a href="https://www.instagram.com/godwitinternational?lqvp=MWJuc3M0Y3NubmlwMg==" target="_blank" rel="noopener noreferrer"
+                           class="flex items-center justify-between p-4 rounded-2xl bg-gradient-to-r from-purple-900/60 via-pink-900/50 to-amber-900/40 border border-pink-500/30 hover:border-pink-400 transition-all group">
+                            <div class="flex items-center gap-3.5">
+                                <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-amber-500 via-pink-500 to-purple-600 text-white flex items-center justify-center shadow-lg">
+                                    <i class="fa-brands fa-instagram text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-sm text-white">Follow Us on Instagram</h4>
+                                    <p class="text-xs text-pink-200">@godwitinternational • Student Visa Stories & IELTS Tips</p>
+                                </div>
+                            </div>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-pink-300 group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Column: Exact Requested Web3Forms Contact Form -->
+                <div class="lg:col-span-7">
+                    <div class="rounded-3xl bg-white text-slate-900 p-7 sm:p-10 shadow-2xl border border-white/20">
+                        <h3 class="font-serif text-2xl sm:text-3xl font-bold text-plum-950">Send Us Your Enquiry</h3>
+                        <p class="text-xs sm:text-sm text-slate-600 mt-1.5">
+                            Fill in your details below to book your free diagnostic assessment or visa consultation.
+                        </p>
+
+                        <!-- Web3Forms Form with Exact Action, Method & Access Key -->
+                        <form id="enquiryForm" action="https://api.web3forms.com/submit" method="POST" class="mt-6 space-y-5">
+                            <input type="hidden" name="access_key" value="3bdfc5de-d54e-4dd6-9809-454afdef7815">
+                            <input type="hidden" name="subject" value="New Enquiry - Godwit International Website">
+
+                            <div>
+                                <label for="userName" class="block text-xs font-bold uppercase tracking-wider text-plum-950 mb-2">Full Name *</label>
+                                <input id="userName" type="text" name="name" required placeholder="e.g., Aarav Patel"
+                                       class="w-full px-4 py-3.5 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-lavender-500 focus:border-transparent transition-all">
+                            </div>
+
+                            <div>
+                                <label for="userEmail" class="block text-xs font-bold uppercase tracking-wider text-plum-950 mb-2">Email Address *</label>
+                                <input id="userEmail" type="email" name="email" required placeholder="e.g., aarav@example.com"
+                                       class="w-full px-4 py-3.5 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-lavender-500 focus:border-transparent transition-all">
+                            </div>
+
+                            <div>
+                                <label for="userMessage" class="block text-xs font-bold uppercase tracking-wider text-plum-950 mb-2">Your Goal / Message (IELTS, Visa Country, Course) *</label>
+                                <textarea id="userMessage" name="message" rows="4" required placeholder="Tell us about your target country, IELTS/PTE goals, or visa requirements..."
+                                          class="w-full px-4 py-3.5 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-lavender-500 focus:border-transparent transition-all"></textarea>
+                            </div>
+
+                            <button id="submitBtn" type="submit"
+                                    class="btn-glow w-full py-4 rounded-xl bg-gradient-to-r from-plum-950 via-lavender-600 to-indigo-600 text-white font-bold text-sm sm:text-base shadow-xl flex items-center justify-center gap-2">
+                                <span id="submitBtnText">Submit Enquiry</span>
+                                <i class="fa-solid fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="bg-[#100C21] border-t border-white/10 py-12 text-slate-400 text-xs sm:text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-3">
+                <div class="bg-white rounded-xl p-1 w-10 h-10 flex items-center justify-center">
+                    <img src="Godwit Logo (1).png" alt="Godwit International" class="w-full h-full object-contain"
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <i class="fa-solid fa-globe text-skybrand-500 text-xl hidden"></i>
+                </div>
+                <div>
+                    <p class="font-bold text-white">GODWIT INTERNATIONAL</p>
+                    <p class="text-xs text-slate-400">Sama-Savli Road, Opp. Urmi School, New Sama, Vadodara</p>
+                </div>
+            </div>
+
+            <div class="flex flex-wrap items-center justify-center gap-5 text-xs">
+                <a href="#home" class="hover:text-white">Home</a>
+                <a href="#about" class="hover:text-white">About Us</a>
+                <a href="#ielts" class="hover:text-white">IELTS Coaching</a>
+                <a href="#visa" class="hover:text-white">Visa Services</a>
+                <a href="#study-abroad" class="hover:text-white">Study Abroad</a>
+                <a href="https://www.instagram.com/godwitinternational?lqvp=MWJuc3M0Y3NubmlwMg==" target="_blank" rel="noopener noreferrer" class="text-pink-400 hover:text-pink-300 font-semibold">
+                    <i class="fa-brands fa-instagram mr-1"></i>Instagram
+                </a>
+            </div>
+
+            <p class="text-xs text-slate-500">© 2026 Godwit International. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- ===================================================================== -->
-    <!-- FLOATING WHATSAPP ACTION BUTTON                                       -->
-    <!-- ===================================================================== -->
-    <a id="floating-whatsapp-btn" href="https://wa.me/917016069692?text=Hello%20Godwit%20International%2C%20I%20would%20like%20to%20enquire%20about%20IELTS%20coaching%20and%20study%20abroad%20guidance." target="_blank" rel="noopener noreferrer" aria-label="Chat with Godwit International on WhatsApp" class="fixed bottom-6 right-6 z-40 group flex items-center gap-3 bg-[#25D366] hover:bg-[#20bd5a] text-navy-950 font-bold px-4 py-3.5 rounded-full shadow-2xl transition-all duration-300 hover:scale-105">
-        <i class="fa-brands fa-whatsapp text-2xl"></i>
-        <span class="hidden sm:inline text-xs tracking-wide pr-1">Chat on WhatsApp</span>
-    </a>
-
-    <!-- ===================================================================== -->
-    <!-- CUSTOM ENQUIRY SUBMISSION MODAL (Exact Required Copy & WhatsApp Link) -->
-    <!-- ===================================================================== -->
-    <div id="enquiry-success-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/75 backdrop-blur-md">
-        <div class="bg-navy-900 border border-white/15 rounded-3xl max-w-md w-full p-7 sm:p-8 text-center shadow-2xl relative animate-fadeIn">
-            <div class="w-16 h-16 rounded-2xl bg-lime-accent/20 border border-lime-accent/40 text-lime-accent flex items-center justify-center mx-auto mb-5">
-                <i class="ph-fill ph-check-circle text-4xl"></i>
+    <!-- ==================== ENQUIRY SUBMITTED MODAL WITH WHATSAPP REDIRECT ==================== -->
+    <div id="enquirySuccessModal" class="fixed inset-0 z-[90] hidden items-center justify-center p-4 bg-black/75 backdrop-blur-md">
+        <div class="bg-white text-slate-900 rounded-3xl max-w-md w-full p-7 sm:p-8 shadow-2xl border border-slate-200 text-center transform transition-all scale-100">
+            <div class="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto mb-5 shadow-inner">
+                <i class="fa-solid fa-circle-check text-3xl"></i>
             </div>
-            <h3 class="font-serif text-xl sm:text-2xl font-bold text-white tracking-wide uppercase">
+
+            <h3 class="text-xl sm:text-2xl font-extrabold text-plum-950 tracking-tight">
                 YOUR ENQUIRY HAS BEEN SUBMITTED!
             </h3>
-            <p class="mt-3 text-sm text-cream-100/85 leading-relaxed">
+
+            <p class="mt-3 text-slate-600 text-sm leading-relaxed">
                 Our team will reach out to you shortly. You can also send these details directly via WhatsApp for an immediate response.
             </p>
-            
-            <!-- Summary preview of submitted fields -->
-            <div id="modal-submission-summary" class="mt-4 p-3.5 rounded-2xl bg-white/5 border border-white/10 text-left text-xs text-cream-200/80 space-y-1 max-h-36 overflow-y-auto">
+
+            <!-- Summary Preview of Filled Details -->
+            <div id="submittedPreviewBox" class="mt-4 p-3.5 rounded-2xl bg-slate-50 border border-slate-200 text-left text-xs text-slate-700 space-y-1">
+                <!-- Populated dynamically via JS -->
             </div>
 
-            <!-- Exact Two Required Buttons: Close and Continue to WhatsApp -->
+            <!-- Two Required Action Buttons: Close & Continue to WhatsApp -->
             <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3">
-                <button onclick="closeEnquiryModal()" class="w-full py-3 px-4 rounded-full bg-white/10 hover:bg-white/15 text-cream-100 font-semibold text-sm transition cursor-pointer">
+                <button id="closeModalBtn" type="button"
+                        class="w-full py-3 px-4 rounded-xl border border-slate-300 text-slate-700 font-bold text-sm hover:bg-slate-100 transition-colors">
                     Close
                 </button>
-                <a id="modal-whatsapp-redirect" href="https://wa.me/917016069692" target="_blank" rel="noopener noreferrer" class="w-full py-3 px-4 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-navy-950 font-bold text-sm flex items-center justify-center gap-2 transition shadow-lg">
+                <a id="continueWhatsappBtn" href="https://wa.me/917016069692" target="_blank" rel="noopener noreferrer"
+                   class="btn-glow w-full py-3 px-4 rounded-xl bg-[#25D366] hover:bg-[#1ebe5d] text-white font-bold text-sm shadow-lg flex items-center justify-center gap-2">
                     <i class="fa-brands fa-whatsapp text-lg"></i>
                     <span>Continue to WhatsApp</span>
                 </a>
@@ -408,10 +1031,7 @@
         </div>
     </div>
 
-    <!-- ===================================================================== -->
-    <!-- APPLICATION STATE, DATA STORE & COMPLETE MULTI-PAGE ENGINE            -->
-    <!-- ===================================================================== -->
-    
-    <script src="script.js"></script>
+    <!-- ==================== JAVASCRIPT ==================== -->
+        <script src="script.js"></script>
 </body>
 </html>
