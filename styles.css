@@ -1,0 +1,98 @@
+/* Custom Editorial & Curved Sidebar Aesthetics */
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #090D16;
+            color: #F4F1EA;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, .font-editorial {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Curved Sidebar Inspired by Reference Image 1 */
+        .curved-sidebar-drawer {
+            background: linear-gradient(155deg, rgba(22, 32, 51, 0.88) 0%, rgba(12, 18, 30, 0.94) 100%);
+            backdrop-filter: blur(22px);
+            -webkit-backdrop-filter: blur(22px);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.65), inset 0 1px 1px rgba(255, 255, 255, 0.2);
+            /* Subtle inward organic curve on desktop/tablet */
+            border-radius: 36px;
+            clip-path: path('M 36,0 L 296,0 C 316,0 332,16 332,36 C 314,180 314,420 332,644 C 332,664 316,680 296,680 L 36,680 C 16,680 0,664 0,644 C 16,420 16,180 0,36 C 0,16 16,0 36,0 Z');
+        }
+
+        @media (max-width: 640px) {
+            .curved-sidebar-drawer {
+                clip-path: none;
+                border-radius: 28px;
+            }
+        }
+
+        /* Wave Section Dividers matching Reference Image 2 */
+        .wave-divider-top {
+            position: relative;
+        }
+        .wave-divider-top::before {
+            content: '';
+            position: absolute;
+            top: -48px;
+            left: 0;
+            width: 100%;
+            height: 49px;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 60' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 30C360 -10 720 70 1080 30C1260 10 1380 15 1440 25V60H0V30Z' fill='%23F4F1EA'/%3E%3C/svg%3E");
+            background-size: cover;
+            background-repeat: no-repeat;
+            pointer-events: none;
+        }
+
+        .wave-divider-navy::before {
+            content: '';
+            position: absolute;
+            top: -48px;
+            left: 0;
+            width: 100%;
+            height: 49px;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 60' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 20C420 65 980 -15 1440 30V60H0V20Z' fill='%230B101B'/%3E%3C/svg%3E");
+            background-size: cover;
+            background-repeat: no-repeat;
+            pointer-events: none;
+        }
+
+        /* Skewed Destination Cards matching Reference Image 2 */
+        .destination-skew-card {
+            transform: perspective(1000px) rotateY(-4deg);
+            transition: all 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .destination-skew-card:hover {
+            transform: perspective(1000px) rotateY(0deg) translateY(-8px);
+        }
+
+        /* Subtle Noise Texture Overlay for Premium Editorial Feel */
+        .editorial-grain {
+            background-image: radial-gradient(rgba(210, 242, 124, 0.08) 1px, transparent 0);
+            background-size: 28px 28px;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #090D16;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #23304A;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #D2F27C;
+        }
+
+        .fade-in-view {
+            animation: fadeInUp 0.45s ease-out forwards;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(14px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
